@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message-list {
+            margin-top: 20px;
+        }
+        .message {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .message p {
+            margin: 0;
+        }
+        .message span {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>방명록</h1>
+    <form id="guestbookForm">
+        <input type="text" id="name" placeholder="이름을 입력하세요" required>
+        <textarea id="message" placeholder="메시지를 입력하세요" rows="4" required></textarea>
+        <button type="submit">메시지 남기기</button>
+    </form>
+
+    <div class="message-list" id="messageList">
+        <!-- 방명록 메시지가 여기에 추가됩니다. -->
+    </div>
+</div>
+
+<script>
+    // 메시지 추가 함수
+    function addMessage(name, message) {
+        const messageList = document.getElementById("messageList");
+
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+
+        const messageContent = `
+            <p><strong>${name}</strong></p>
+            <p>${message}</p>
+            <span>${new Date().toLocaleString()}</span>
+        `;
+
+        messageDiv.innerHTML = messageContent;
+        messageList.appendChild(messageDiv);
+    }
+
+    // 폼 제출 이벤트 처리
+    document.getElementById("guestbookForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+
+        if (name && message) {
+            addMessage(name, message);
+            // 폼 초기화
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+    });
+</script>
+
+</body>
+</html>

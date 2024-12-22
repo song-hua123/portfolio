@@ -1,0 +1,504 @@
+    /* 공통 스타일 */
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px; /* 네비게이션 바 높이에 맞춰 여백 설정 */
+      }
+  
+  
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffe2e2;
+        color: #333;
+      }
+  
+      p {
+      font-size: 14px; /* 기본 글자 크기를 14px로 설정 */
+      line-height: 1.5; /* 줄 간격 설정 */
+  }
+  
+      h1, h2, h3 {
+        margin: 0;
+      }
+  
+      header {
+        background-color: #7b3737;
+        color: white;
+        text-align: center;
+        padding: 50px;
+        padding-top: 70px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+  
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+  
+      header p {
+        font-size: 1.2rem;
+        color: #bbb;
+        margin-top: 10px;
+      }
+  
+  
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: #222;
+        padding: 15px 0;
+      }
+  
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        text-transform: uppercase; /* 대문자로 변경 */
+        letter-spacing: 2px; /* 글자 간격 */
+      }
+  
+      nav a:hover {
+        color: #ffd700;
+      }
+  
+      main {
+        padding: 100px 70px 70px;
+      }
+  
+      section {
+        padding-top: 50px; /* 섹션 상단 여백 추가 */
+        margin-bottom: 30px;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+  
+      section h2 {
+        font-size: 1.8rem;
+        color: #333;
+        border-bottom: 3px solid #ffd700;
+        /* display: inline-block; */
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+  
+
+            /* contact 섹션 숨김 상태 */
+      #contact {
+        display: none; /* 초기에는 숨김 */
+
+      }
+
+      #contact img {
+        width: 30px; /* 원하는 너비 */
+        height: auto; /* 높이를 비율에 맞게 자동 조절 */
+        margin-right: 10px; /* 텍스트와의 간격 조절 */
+        vertical-align: middle; /* 텍스트와 수평 정렬 */
+      }
+      
+      section:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+      }
+  
+      /* 배경음악 컨트롤 */
+      #music-controls {
+        position: absolute;  /* 부모인 header 안에서 절대 위치로 설정 */
+        top: 50px;  /* 상단 여백 */
+        left: 20px;  /* 왼쪽 여백 */
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+      }
+  
+      #music-controls button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+  
+      #music-controls input[type="range"] {
+        width: 100px;
+      }
+  
+          /* 버튼 스타일 개선 */
+      #play-pause-btn {
+          background-color: #ff6347; /* 강조된 버튼 색상 */
+          color: white;
+          padding: 5px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+  
+      #play-pause-btn:hover {
+          background-color: #e55347;
+      }
+  
+          /* 볼륨 슬라이더 스타일링 */
+      #volume-slider {
+          width: 100%;
+          height: 10px;
+          background-color: #ddd;
+          border-radius: 5px;
+      }
+  
+  
+  
+      #score-container {
+    position: fixed;
+    top: 50px;
+    right: 30px; /* 오른쪽 상단에 배치 */
+    background-color: rgba(213, 1, 255, 0.7); /* 투명한 검정 배경 */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 15px; /* 둥근 모서리 */
+    font-size: 1.2rem; /* 글자 크기 적당히 설정 */
+    font-family: 'Helvetica Neue', sans-serif; /* 세련된 폰트 */
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 부드러운 그림자 */
+    z-index: 1000;
+    transition: all 0.3s ease; /* 부드러운 애니메이션 */
+  }
+  
+  #score-container:hover {
+    background-color: rgba(95, 6, 100, 0.85); /* hover 시 배경색 짙어짐 */
+    transform: scale(1.05); /* hover 시 살짝 커짐 */
+  }
+   /* 버튼 스타일 */
+   .hidden-button {
+    background-color: #d461fb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    position: relative;
+    margin-bottom: 20px; /* 밑에 20px의 여백 추가 */
+  }
+  
+  .hidden-button:hover {
+    background-color: hsl(283, 62%, 51%);
+  }
+  
+  .hidden-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
+  
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+  
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: #3a1e00;
+        padding: 10px 0;
+        position: fixed; /* 추가 */
+        top: 0; /* 상단 고정 */
+        width: 100%; /* 화면 너비에 맞춤 */
+        z-index: 1000; /* 다른 요소들보다 위에 위치하도록 설정 */
+      }
+  
+      /* 프로필 사진, 텍스트 스타일링 */
+      /* 프로필 텍스트 왼쪽으로 이동 */
+      .profile-container {
+        display: flex;
+        align-items: center; /* 수직 정렬 */
+        justify-content: flex-start; /* 텍스트 왼쪽 정렬 */
+      }
+  
+      .right {
+        margin-left: 0; /* margin-left 값 제거 */
+        padding-left: 100px; /* 왼쪽 여백 추가 */
+      }
+  
+      .profile-img {
+        border: 4px solid #f39c12; /* 색 테두리 */
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        transition: transform 0.3s ease;
+      }
+  
+      .profile-img:hover {
+      transform: scale(1.1); /* 이미지 확대 */
+    }
+  
+      .name {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      /* 프로필 텍스트 스타일 */
+      .profile-text {
+        position: relative;
+        display: none;  /* 처음에는 보이지 않음 */
+        text-align: left;
+        opacity: 0;
+        margin-bottom: 10px;  /* 각 텍스트 사이 간격 */
+        font-size: 1.2rem;
+        line-height: 1.5;
+        transition: opacity 1s ease-in-out; /* 부드럽게 나타나게 설정 */
+      }
+      /* "엔터 키를 눌러봐" 문구 스타일 */
+      #scroll-prompt {
+        position: absolute;
+        top: 50%; /* 화면 중앙에 위치하도록 설정 */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.8rem;
+        color: #a1a1a1;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+  
+      .career-media {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      }
+  
+      .career-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px;
+      background-color: #f6f6f6; /* 섹션 배경색 */
+      border-radius: 8px; /* 둥근 모서리 */
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3); /* 더 블러하고 어두운 그림자 */
+      box-sizing: border-box; /* padding 포함 */
+  }
+  
+      .career-item:not(:last-child) {
+          margin-bottom: 30px; /* 섹션 사이 여백 */
+      }
+  
+      .career-video {
+      flex: 1; /* 부모 요소가 자식 크기에 맞게 확장되도록 설정 */
+    }
+  
+      .career-video iframe {
+        width: 100%; /* iframe 크기를 부모 요소에 맞춤 */
+        max-width: 620px; /* 동영상 최대 크기 설정 */
+        aspect-ratio: 16 / 9; /* 비율 고정 */
+        border-radius: 8px; /* 둥근 모서리 */
+        flex: 1; /* 레이아웃에서 유연하게 확장 */
+  
+      }
+  
+  
+  
+      .career-description {
+        display: none; /* 초기 숨김 상태 */
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out; /* 부드럽게 나타나는 효과 */
+        flex: 1;
+      flex: 1; /* 설명도 유연하게 확장 */
+      min-width: 300px; /* 설명의 최소 크기 */
+      }
+  
+      .career-description.show {
+        display: block;
+        opacity: 1;
+      }
+  
+      .career-description p {
+          margin: 25px;
+      }
+  
+  
+  
+    .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    transform: scale(0.8); 
+    transform-origin: center;
+  }
+  
+  .skill img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+  
+  .skill span {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .skill-bar-wrapper {
+    width: 80%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 16px;
+    position: relative; /* 부모 요소의 상대적 위치 지정 */
+  }
+  
+  .skill-bar {
+    width: 0;
+    height: 16px; /* 회색 바와 동일한 높이로 설정 */
+    border-radius: 10px;
+    background-color: #4CAF50;
+    position: absolute; /* 회색 바 위에 배치되도록 수정 */
+    top: 0;
+    left: 0;
+    transition: width 1s ease;
+  }
+  
+  .percent-text {
+    position: absolute;
+    right: 0; /* 회색 바의 오른쪽 끝에 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
+    visibility: hidden; /* 처음에는 숨김 */
+  }
+  
+  .skill img:hover + .skill-bar-wrapper .skill-bar {
+    width: 90%;
+  }
+  
+  @media (max-width: 768px) {
+    .skill {
+      transform: scale(0.7);
+    }
+  
+    .skill-bar-wrapper {
+      height: 6px;
+    }
+  
+    .skill span {
+      font-size: 0.7em;
+    }
+  
+    .skill img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  
+  
+  
+  #guestbook {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+  }
+  
+  #guestbook label {
+    display: inline-block; /* label과 입력 필드를 나란히 배치 */
+    width: 100px; /* label의 고정 너비 */
+    vertical-align: top; /* label을 상단 정렬 */
+    margin-top: 8px; /* 텍스트박스와의 자연스러운 간격 */
+  }
+  
+  #guestbook input,
+  #guestbook textarea {
+    width: 90%; /* 입력 필드 크기 조정 */
+    padding: 8px; /* 패딩 조정 */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+  }
+  
+  #guestbook textarea {
+    height: 100px; /* 텍스트 박스 높이 */
+    resize: none; /* 크기 조정 불가 */
+  }
+  
+  #send-button {
+    background-color: #4CAF50; /* 보내기 버튼 색상 */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+  }
+  
+  #send-button:hover {
+    background-color: #45a049;
+  }
+  
+  #confirmation-message,
+  #error-message {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  #guestbook-messages {
+    margin-top: 20px;
+    display: flex; /* 메시지 나열: 가로 정렬 */
+    flex-wrap: wrap; /* 한 줄에 메시지가 3개를 초과하면 다음 줄로 이동 */
+    gap: 15px; /* 메시지 간 간격 */
+  }
+  
+  .message {
+    width: 30%; /* 한 줄에 3개 정렬 */
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word; /* 긴 메시지 줄바꿈 */
+  }
+  
+  #delete-messages-button {
+    margin-top: 20px;
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #delete-messages-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .guestbook-header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* 하단 선 추가 (반투명) */
+    padding-bottom: 10px; /* 선과 텍스트 사이 간격 */
+    margin-bottom: 20px; /* 선 아래 여백 */
+  }
+

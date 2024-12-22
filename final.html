@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="final_style.css"> <!-- CSS 파일 연결 -->
+
+</head>
+<body>
+  <div id="music-controls">
+    <span id="audio-icon">🔊</span>
+    <button id="play-pause-btn">▶️</button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5"> 
+  </div>
+
+  <audio id="background-audio" autoplay loop>
+    <source src="pixel-dreams-259187.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <header>
+    <h1>PORTPOLIO</h1>
+    <p>최송화의 포트폴리오</p>
+  </header>
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#other-career">Career</a>
+    <a href="#skills">Skills</a>
+    <a href="#guestbook">guestbook</a>
+  </nav>
+
+  <div id="score-container">
+    Score: <span id="score">0</span>
+  </div>
+
+  <main>
+    <section id="profile">
+      <button class="hidden-button" id="score-button" onclick="increaseScore(this)" disabled>점수획득</button>
+      <h2>Profile</h2> <!-- 제목 추가 -->
+      <div class="profile-container">
+        <div class="left">
+          <img src="woman.png" alt="Profile Picture" class="profile-img">
+          <p class="name">최송화</p>
+        </div>
+        <div class="right">
+          <p class="profile-text" id="text-1">이름: 최송화</p>
+          <p class="profile-text" id="text-2">성별: 여</p>
+          <p class="profile-text" id="text-3">나이:2003.04.12</p>
+          <p class="profile-text" id="text-4">희망직업: 콘텐츠 크리에이터</p>
+          <p class="profile-text" id="text-5">경력사항: 마케팅팀 영상제작부서 인턴 2개월 (2024.06~2024.08) </p>
+        </div>
+      </div>
+      <p id="scroll-prompt">엔터 키를 눌러보세요</p> <!-- 추가된 문구 -->
+    </section>
+
+  
+
+    <!-- 기타 경력 -->
+    <section id="other-career">
+      <button class="hidden-button" id="score-button-career" onclick="increaseScore(this)" disabled>점수획득</button>
+      <div class="container">
+        <div class="section-heading">
+          <h2>Career</h2>
+        </div>
+        <div class="career-content">
+          <div class="career-details">
+            <h3>프로젝트 및 경력사항입니다.</h3>
+            <p>자세한 내용이 궁금하다면, 각 동영상 오른쪽을 클릭해보세요.</p>
+          </div>
+    
+          <!-- 첫 번째 동영상 -->
+          <div class="career-item">
+            <div class="career-video">
+              <iframe src="https://www.youtube.com/embed/f6LnRxSYI-A" title="액체진입" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="career-description" id="career-description-1">
+              <h4>액체진입 게임</h4>
+              <p>#2.5D 게임 #어드벤처 #횡스크롤_플랫폼 #스토리_퍼즐<br>
+                <br>
+                슬라임으로 변신해, 깨끗한 물방울을 모아 오염된 세상을 정화시키는 스토리입니다.<br>
+                퍼즐을 풀며 탐색하고, 물방울의 개수와 행동에 따라 엔딩이 달라집니다.<br>
+                액체로 변하는 능력을 사용해 물방울을 모으는게 주된 목표입니다.<br>
+                <br>
+                ​맡은 역할: 게임 기획 및 컷씬제작<br>
+                사용 프로그램: Unity, Adobe After Effects
+              </p>
+            </div>
+          </div>
+    
+          <!-- 두 번째 동영상 -->
+          <div class="career-item">
+            <div class="career-video">
+              <iframe src="https://www.youtube.com/embed/srrgqu8jGes" title="Unity" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="career-description" id="career-description-2">
+              <h4>MAZE: burnout</h4>
+              <p>#3D #1인칭 시점 #1인제작 <br>
+                <br>
+                외적으로는 감옥(던전)에서 탈출하려고 하는, 내적으로는 반복되는 현실과 업무에 지쳐버린 주인공의 심리를 표현한 이야기입니다. <br>
+                포기하지 않으면 언젠간 희망이 보인다는 주제로 만들었습니다.<br>
+                1인제작 1인칭 인터렉티브 프로젝트입니다.<br>
+                <br>
+                ​맡은 역할: 기획 및 제작<br>
+                사용 프로그램: Unity
+              </p>
+            </div>
+          </div>
+    
+          <!-- 세 번째 동영상 -->
+          <div class="career-item">
+            <div class="career-video">
+              <iframe src="https://www.youtube.com/embed/lvbOy6gVphw" title="천인갱 프로젝트 영상" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="career-description" id="career-description-3">
+              <h4>천인갱 프로젝트 영상</h4>
+              <p>#2D 애니메이션 #픽토그램 #홍보영상 <br>
+                <br>
+                사람들에게 잊혀질 위기에 처한 천인갱 사태를 널리 알리고자 실시한 프로젝트에 영상으로 참여하였습니다.<br>
+                모션그래픽을 사용한 픽토그램 애니메이션으로 시청자들에게 천인갱에 대해 알렸습니다.<br>
+                역사를 어려워 하는 시청자들도 쉽게 이해하고 마음속 깊이 공감할 수 있도록 기획, 제작하였습니다.<br>
+                <br>
+                ​맡은 역할: 기획 및 영상편집<br>
+                사용 프로그램: Adobe Premiere Pro, Adobe After Effects
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 점수 버튼을 추가 -->
+    </section>
+  
+
+    <!-- 스킬 -->
+    <!-- <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML & CSS <button class="hidden-button" onclick="increaseScore(this)">Mark as Complete</button></li>
+        <li>JavaScript <button class="hidden-button" onclick="increaseScore(this)">Mark as Complete</button></li>
+        <li>React.js <button class="hidden-button" onclick="increaseScore(this)">Mark as Complete</button></li>
+        <li>Adobe Photoshop <button class="hidden-button" onclick="increaseScore(this)">Mark as Complete</button></li>
+      </ul>
+    </section> -->
+
+<!-- 스킬 섹션 -->
+
+<section id="skills">
+  <button class="hidden-button" id="score-button-skill" onclick="increaseScore(this)" disabled>점수획득</button>
+  <h2>Skills</h2>
+  <p>자세한 수치가 궁금하다면, 이미지 위에 마우스를 올려주세요.</p>
+  <div class="skill">
+    <img src="aftereffect.png" alt="After Effect Icon">
+    <span>After Effect</span>
+    <div class="skill-bar-wrapper">
+      <div class="skill-bar" data-percent="90%">
+        <span class="percent-text"></span> <!-- 퍼센트 텍스트 -->
+      </div>
+    </div>
+  </div>
+  <div class="skill">
+    <img src="premire.png" alt="Premiere Pro Icon">
+    <span>Premiere Pro</span>
+    <div class="skill-bar-wrapper">
+      <div class="skill-bar" data-percent="80%">
+        <span class="percent-text"></span>
+      </div>
+    </div>
+  </div>
+  <div class="skill">
+    <img src="photo.png" alt="Photoshop Icon">
+    <span>Photoshop</span>
+    <div class="skill-bar-wrapper">
+      <div class="skill-bar" data-percent="70%">
+        <span class="percent-text"></span>
+      </div>
+    </div>
+  </div>
+  <div class="skill">
+    <img src="illur.png" alt="Illustrator Icon">
+    <span>Illustrator</span>
+    <div class="skill-bar-wrapper">
+      <div class="skill-bar" data-percent="60%">
+        <span class="percent-text"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="guestbook">
+  <button class="hidden-button" id="score-button-guestbook" onclick="increaseScore(this)" disabled>점수획득</button>
+  <h2>Guestbook</h2>
+  <p>방명록을 작성해주세요.</p>
+  <form id="guestbook-form">
+    <label for="name">닉네임:</label>
+    <input type="text" id="name" name="name" placeholder="닉네임을 입력하세요" required>
+    <br>
+    <label for="message">메시지:</label>
+    <textarea id="message" name="message" placeholder="메시지를 남겨주세요" rows="5" required></textarea>
+    <br>
+    <button type="submit" id="send-button">보내기</button>
+  </form>
+  <div id="confirmation-message" style="display:none; color: green; margin-top: 20px;">메시지가 성공적으로 전송되었습니다!</div>
+  <div id="error-message" style="display:none; color: red; margin-top: 20px;">메시지 전송에 실패했습니다. 다시 시도해주세요.</div>
+  
+  <div class="guestbook-header">
+    <h3>방명록 내용</h3>
+  </div>  
+  <div id="guestbook-messages">
+    <!-- 방명록 메시지들이 여기에 표시됩니다 -->
+  </div>
+  <!-- 방명록 삭제 버튼 -->
+  <button id="delete-messages-button">모든 방명록 삭제</button>
+
+</section>
+
+    <!-- 연락처 -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><img src="email.png" alt="Email Icon"> Email: sonia30412@naver.com</p>
+      <p><img src="phone.png" alt="Phone Icon"> Phone: 010-7204-2852</p>
+    </section>
+    
+  </main>
+
+  <footer>
+    &copy; 2024 CHOI SONGHWA. All rights reserved.
+  </footer>
+
+
+  <!-- JavaScript 코드 -->
+  <script src="final_script.js"></script> <!-- JS 파일 연결 -->
+
+</body>
+</html>
